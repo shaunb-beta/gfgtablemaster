@@ -1,0 +1,22 @@
+{
+	"workorder": {
+		"id": "KOPF",
+		"object": "AUFK",
+		"paramField1": "WorkOrderNumber"
+	},
+	"equipment": {
+		"id": "LTXT",
+		"object": "EQUI",
+		"paramField1": "EquipmentNumber"
+	},
+	"equipmentpermits": {
+		"id": "LTXT",
+		"object": "IHSG",
+		"paramField1": "EquipmentNumber"
+	},
+	"reobject": {
+		"id": "CAAT",
+		"object": "RE",
+		"paramField1": "LeaseNumber"
+	}
+}

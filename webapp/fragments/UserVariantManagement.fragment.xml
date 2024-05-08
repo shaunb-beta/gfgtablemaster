@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form"
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog icon="sap-icon://user-edit" title="{i18n>manageVariants}" class="sapUiResponsiveContentPadding">
+		<subHeader>
+			<Toolbar>
+				<content>
+					<Button id="idVariantManageSelectAll" text="{i18n>selectAll}" icon="sap-icon://multiselect-all" press="onManageVariants"
+						customData:action="selectAll"/>
+					<Button id="idVariantManageDeSelectAll" text="{i18n>deselectAll}" icon="sap-icon://multiselect-none" press="onManageVariants"
+						customData:action="deselectAll" visible="false"/>
+				</content>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<List id="idVariantManageTable" mode="MultiSelect" growing="true" growingScrollToLoad="true" items="{uvModel>/}">
+				<items>
+					<StandardListItem title="{uvModel>Description}" description="{uvModel>UsrVariantID}" customData:variantData="{uvModel>}"/>
+				</items>
+			</List>
+		</content>
+		<buttons>
+			<Button id="idVariantManageDeleteBtn" text="{i18n>delete}" icon="sap-icon://delete" press="onManageVariants" customData:action="delete"/>
+			<Button text="{i18n>close}" icon="sap-icon://cancel" press="onManageVariants" customData:action="close"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

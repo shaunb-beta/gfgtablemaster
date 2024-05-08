@@ -1,0 +1,45 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns:customCtrl="brs_demo_tablemaster.fragments">
+	<P13nDialog ok="handleOK" cancel="handleCancel" showReset="true" reset="handleReset" initialVisiblePanelType="columns"
+		stretch="{= ${device>/system/desktop} === true ? false : true}">
+		<panels>
+			<P13nColumnsPanel title="Available Fields" visible="true"
+				items="{path: 'tableVariantAFModel>/Fields', sorter:{path: 'DisplayOrder', descending: false}}"
+				columnsItems="{path: 'tableVariantAFModel>/Fields'}" changeColumnsItems="reorderColumnsItem">
+				<P13nItem columnKey="{path: 'tableVariantAFModel>Fieldname'}" text="{tableVariantAFModel>FieldDescription}"/>
+				<columnsItems>
+					<P13nColumnsItem columnKey="{path: 'tableVariantAFModel>Fieldname'}"
+						visible="{path:'tableVariantAFModel>Visible' , formatter:'.booleanFormatter'}" index="{tableVariantAFModel>DisplayOrder}"
+						app:IsParameter="{tableVariantAFModel>IsParameter}" total="false"/>
+				</columnsItems>
+			</P13nColumnsPanel>
+			<P13nSortPanel title="Sort" visible="false" type="sort" containerQuery="true" items="{tableVariantAFModel>/Fields}"
+				sortItems="{path:'tableVariantAFModel>/Fields', sorter:{path:'Sort_Order'}, filters:[{path: 'Sort_Op', operator: 'NE', value1:null}]}"
+				addSortItem="changeVariantItem" updateSortItem="changeVariantItem" removeSortItem="changeVariantItem">
+				<P13nItem columnKey="{tableVariantAFModel>Fieldname}" text="{tableVariantAFModel>FieldDescription}"
+					visible="{ path: 'tableVariantAFModel>Sortable', formatter:'.booleanFormatter'}"/>
+				<sortItems>
+					<P13nSortItem columnKey="{tableVariantAFModel>Fieldname}" operation="{path: 'tableVariantAFModel>Sort_Op'}"/>
+				</sortItems>
+			</P13nSortPanel>
+			<P13nFilterPanel title="Filter" visible="true" type="filter" containerQuery="true" maxExcludes="0" items="{tableVariantAFModel>/Fields}"
+				filterItems="{tableVarFilterModel>/}" addFilterItem="changeVariantItem" updateFilterItem="changeVariantItem"
+				removeFilterItem="changeVariantItem">
+				<P13nItem columnKey="{tableVariantAFModel>Fieldname}" text="{tableVariantAFModel>FieldDescription}"/>
+				<filterItems>
+					<P13nFilterItem columnKey="{tableVarFilterModel>Fieldname}" operation="{tableVarFilterModel>filter_op}"
+						value1="{tableVarFilterModel>val_low}" value2="{tableVarFilterModel>val_high}"/>
+				</filterItems>
+			</P13nFilterPanel>
+			<P13nGroupPanel title="Groups" maxGroups="10" visible="true" containerQuery="true" items="{tableVariantAFModel>/Fields}"
+				groupItems="{path: 'tableVariantAFModel>/Fields', filters:[{path: 'SubTotal', operator: 'NE', value1: null}]}"
+				addGroupItem="changeVariantItem" updateGroupItem="changeVariantItem" removeGroupItem="changeVariantItem"
+				class="tableMasterCustomTabGroupVariant">
+				<P13nItem columnKey="{tableVariantAFModel>Fieldname}" text="{tableVariantAFModel>FieldDescription}"/>
+				<groupItems>
+					<P13nGroupItem columnKey="{tableVariantAFModel>Fieldname}"/>
+				</groupItems>
+			</P13nGroupPanel>
+		</panels>
+	</P13nDialog>
+</core:FragmentDefinition>

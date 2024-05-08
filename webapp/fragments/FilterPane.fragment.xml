@@ -1,0 +1,5 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form"
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<f:SimpleForm id="idBRSFilterPaneForm" maxContainerCols="1" editable="true" layout="ResponsiveGridLayout" class="brsFilterPaneForm"
+		content="{ path: 'filterPaneDataModel>/', factory: '.filterPaneCreateUI' }"></f:SimpleForm>
+</core:FragmentDefinition>

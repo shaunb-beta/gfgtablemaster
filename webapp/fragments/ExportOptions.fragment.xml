@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<ActionSheet title="{i18n>exportHdr}" showCancelButton="true" placement="Bottom">
+		<buttons>
+			<Button text="{i18n>exportOpt1}" icon="sap-icon://document-text" customData:csvparam="CSVOutput" press="onExportSelection"/>
+			<Button text="{i18n>exportopt2}" icon="sap-icon://comment" customData:csvparam="CSVOutputWithComments" press="onExportSelection"/>
+		</buttons>
+	</ActionSheet>
+</core:FragmentDefinition>

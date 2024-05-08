@@ -1,0 +1,384 @@
+.sapUiBLy.sapMDialogBlockLayerInit {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.displayNone {
+    display: none;
+}
+
+.brsCursorPointer {
+    cursor: pointer;
+}
+
+.brsDefaultCursor.sapMLIBActionable {
+    cursor: default;
+}
+
+.brsAnimation4ms {
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.brsChartMasterPageContainer:last-child {
+    /*height: calc(100% - 48px);*/
+}
+
+.brsWhite {
+    background: #FFFFFF;
+}
+
+.brsLink.sapMText {
+    color: #009DE0;
+}
+
+.brsWarning {
+    color: #E78C07;
+}
+
+.brsLink:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/********************Application Header Style Rules. Common for Every App on CRE Portal**************************/
+
+.brsAppHeader {
+    height: 48px;
+    background: #FFFFFF;
+    box-shadow: none;
+}
+
+.brsAppHeading.sapMLabel {
+    font-size: 1.5rem;
+    color: #39a651;
+}
+
+.brsSubTotalRow > td {
+    background: #bfbfbf;
+}
+
+.brsSubTotalRow > td .sapMText {
+    color: #FFFFFF;
+}
+
+.brsGrandTotalRow > td {
+    background: #666666;
+}
+
+.brsGrandTotalRow > td .sapMText {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.brsSubTotalRow > td > button {
+    display: none;
+}
+
+.tableMasterCustomTabGroupVariant .sapMCb {
+    display: none;
+}
+
+.brsTableMasterMainViewContent>div:last-of-type {
+    overflow: hidden;
+}
+
+
+/***************Variant Select css classes**********************/
+
+.tableMasterSelectList .sapMSelectListItemBaseSelected {
+    /*background-color: red;*/
+}
+
+
+/**************************************************************/
+
+
+/*Pivot Table Css*/
+
+.brsPvTableColF {
+    background: #2F1A57;
+}
+
+.brsPvTableColF .sapMText {
+    color: #FFFFFF;
+}
+
+.brsJumpToItems .sapMSLITitleOnly {
+    font-size: 0.875rem;
+}
+
+.brsCustomHdr.sapMLIB.sapMListTblRow {
+    background: #2F1A57;
+    height: 60px;
+}
+
+.brsCustomHdr > td {
+    vertical-align: middle;
+}
+
+
+/****************************************************************/
+
+
+/*Fixed Table Header*/
+
+.childSContainer {
+    display: inline-block;
+}
+
+
+/*Table CSS.*/
+
+.idBRSTableMasterScrollContainer {
+    height: calc(100% - 48px);
+}
+
+.persoTableStyle table thead th {
+    background: #2F1A57;
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f26522), color-stop(.33, #f26522), color-stop(.75, #f26522), color-stop(1, #ededed));*/
+    /*background: -webkit-linear-gradient(top, #f26522 100%, #f26522 100%, #f26522 100%, #ededed 100%);*/
+    /*background: linear-gradient(top, #f26522 100%, #f26522 100%, #f26522 100%, #ededed 100%);*/
+    /*background-color: #f26522;*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f26522, endColorstr=#ededed, GradientType=0);*/
+}
+
+.persoTableStyle table thead th .sapMText {
+    color: white;
+}
+
+.persoTableStyle table tbody tr:nth-child(even) {
+    background: #F6F6F4;
+}
+
+.tableheaderTitle.sapMLabel {
+    color: #FFFFFF;
+}
+
+.brsVarSaveMCbBg.sapMCb .sapMCbBg {
+    background: #CCCCCC;
+}
+
+.sapMLIB.sapMLIBSelected.brsItemSelected {
+    /*background: #39a651;*/
+}
+
+.sapMLIB.sapMLIBSelected.brsItemSelected>td>span {
+    /*color: #FFFFFF;*/
+}
+
+
+/*DetailView StyleClass*/
+
+.detailViewForm {
+    background: #edeff0;
+    border-radius: 5px;
+}
+
+.detailViewForm .sapUiFormTitle {
+    display: none;
+}
+
+.brsTableMasterDCVB {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanS12)>.brsTableMasterDVFormLbl.sapMLabel,
+.sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanM12)>.brsTableMasterDVFormLbl.sapMLabel,
+.sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanL12)>.brsTableMasterDVFormLbl.sapMLabel,
+.sapUiRespGridMedia-Std-LargeDesktop.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanXL12)>.brsTableMasterDVFormLbl.sapMLabel {
+    text-align: left!important;
+}
+
+.brsDetailViewPanel {
+    border-bottom: 1px solid #DBDBD4;
+}
+
+.brsDetailViewPanel>header>h1,
+.brsDetailViewPanel>header>span {
+    color: #2F1A57;
+}
+
+
+/*****************************************/
+
+
+/*Jump To StyleClasses*/
+
+.jumpToList.sapMList .sapMLIB.sapMGHLI {
+    background: #363e43;
+}
+
+.jumpToList .sapMGHLI .sapMGHLITitle {
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+.groupHdrListItem.sapMGHLI.sapMLIB {
+    background: #363e43;
+}
+
+.groupHdrListItem .sapMGHLITitle {
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+
+/**********************/
+
+
+/********************Filter Pane Style Rules******************************/
+
+.brsFilterPaneContainer .sapMFlexItem {
+    width: 100%;
+}
+
+.brsFilterPaneForm.sapUiSimpleForm .sapUiFormResGridCont.sapUiRespGrid,
+.brsFilterPaneSideContent .sapMITBContainerContent .sapMITBContent {
+    /*background: transparent;*/
+}
+
+.brsFilterPaneSideContent>aside,
+.brsFilterPaneSideContent>div[aria-label='Side Content'] {
+    /*background: #DBDBD4;*/
+}
+
+.brsFilterPaneTab.sapMITB .sapMITBScrollContainer .sapMITBFilter.sapMITBSelected .sapMITBText {
+    /*color: #2f1a57;*/
+}
+
+.brsFilterPaneTab.sapMITB .sapMITBScrollContainer .sapMITBFilter.sapMITBSelected .sapMITBContentArrow {
+    border-bottom-color: #2f1a57;
+}
+
+.brsFilterPaneToggleL:hover,
+.brsFilterPaneToggleL:hover .sapMFlexItem >span::before {
+    cursor: pointer;
+    /*color: #FFFFFF;*/
+    /*background: #2f1a57;*/
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.brsFilterPaneIcon.brsFilterPaneSideContentHide {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.brsFilterPaneSideContentShow.sapUiDSC > aside[aria-label='Side Content'],
+.brsFilterPaneSideContentShow.sapUiDSC > div[aria-label='Side Content'] {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.brsFilterPaneSideContentHide.sapUiDSC > aside[aria-label='Side Content'],
+.brsFilterPaneSideContentHide.sapUiDSC > div[aria-label='Side Content'] {
+    width: 30px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.brsFilterPaneSideContent.sapUiDSC.brsFilterPaneSideContentHide > div:last-child {
+    width: calc(100% - 30px);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.brsFilterPaneSideContentShow > aside[aria-label='Side Content'].brsFilterPaneTab.sapMITB,
+.brsFilterPaneSideContentShow > aside[aria-label='Side Content'] > div.brsFilterPaneContainer > div:first-child,
+.brsFilterPaneSideContentShow > div[aria-label='Side Content'] .brsFilterPaneContainer:first-child.sapMFlexItem {
+    display: block;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.brsFilterPaneSideContentHide.sapUiDSC > aside[aria-label='Side Content'] .brsFilterPaneTab.sapMITB,
+.brsFilterPaneSideContentHide.sapUiDSC > aside[aria-label='Side Content'] > div.brsFilterPaneContainer > div:first-child,
+.brsFilterPaneSideContentHide.sapUiDSC > div[aria-label='Side Content'] .brsFilterPaneTab.sapMITB,
+.brsFilterPaneSideContentHide.sapUiDSC > div[aria-label='Side Content'] > div.brsFilterPaneContainer > div:first-child {
+    display: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.brsFilterPaneLabelColor.sapMLabel {
+    /*color: #2F1A57;*/
+    white-space: noWrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.brsFilterPaneAdvFilL:hover {
+    padding: 0.5rem;
+    border-radius: 5px;
+    background: #DBDBD4;
+    background: rgba(47, 26, 87, 0.3);
+}
+
+.brsFilterPanelAdvLbl {
+    cursor: pointer;
+    color: #2F1A57;
+    vertical-align: middle;
+}
+
+.brsFilterPaneAdvCnt {
+    padding: 0.25rem;
+    border-radius: 50%;
+    background: #39a651;
+    width: 16px;
+    color: #ffffff;
+    float: right;
+}
+
+
+/*Action Class*/
+
+.actionCaseCommentsLI .sapMSLITitle {
+    white-space: pre-wrap;
+    padding-bottom: 0.5rem;
+}
+
+
+/*Initial Data Load MessageBox*/
+
+.initialDataLoadVB {
+    padding: 1rem;
+    background: #39a651;
+    margin: 1rem;
+    border-radius: 10px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.initialDataLoadVB .sapMText {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+
+/*****************************End*****************************************/

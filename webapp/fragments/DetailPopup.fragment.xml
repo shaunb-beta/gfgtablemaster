@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form"
+	xmlns:customData="http://schemas.sapP.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Popover placement="Auto" showHeader="false" bounce="true" verticalScrolling="true" horizontalScrolling="true"></Popover>
+</core:FragmentDefinition>

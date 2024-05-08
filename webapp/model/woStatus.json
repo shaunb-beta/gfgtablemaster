@@ -1,0 +1,63 @@
+{
+	"data": [{
+		"key": "NBIL",
+		"text": "No Billing"
+	}, {
+		"key": "RBIL",
+		"text": "Ready for Billing"
+	}, {
+		"key": "INPL",
+		"text": "In Planning"
+	}, {
+		"key": "PLND",
+		"text": "Planned"
+	}, {
+		"key": "RPLN",
+		"text": "Re-Planned"
+	}, {
+		"key": "DISP",
+		"text": "Dispatched"
+	}, {
+		"key": "REJT",
+		"text": "Rejected"
+	}, {
+		"key": "ACKN",
+		"text": "Acknowledged"
+	}, {
+		"key": "INPR",
+		"text": "In Progress/Start"
+	}, {
+		"key": "HOLD",
+		"text": "On-Hold"
+	}, {
+		"key": "CANC",
+		"text": "Cancelled"
+	}, {
+		"key": "COMP",
+		"text": "Completed"
+	}, {
+		"key": "SCHD",
+		"text": "Scheduled"
+	}, {
+		"key": "INTR",
+		"text": "In-Transit"
+	}, {
+		"key": "ONST",
+		"text": "On-Site"
+	}, {
+		"key": "MSAF",
+		"text": "Made Safe"
+	}, {
+		"key": "RVAC",
+		"text": "Reverse Accruals"
+	}, {
+		"key": "QURD",
+		"text": "Quotation Required"
+	}, {
+		"key": "APRD",
+		"text": "Approval Required"
+	}, {
+		"key": "AWPL",
+		"text": "Awaiting Plannin"
+	}]
+}

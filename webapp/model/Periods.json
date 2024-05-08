@@ -1,0 +1,18 @@
+{
+	"results": [{
+		"key": "YTD",
+		"text": "Year To Date"
+	}, {
+		"key": "PrevMonth",
+		"text": "Previous Month"
+	}, {
+		"key": "Last12Months",
+		"text": "Last 12 Months"
+	}, {
+		"key": "CurrentMonth",
+		"text": "Current Month"
+	}, {
+		"key": "Custom",
+		"text": "User Selection"
+	}]
+}

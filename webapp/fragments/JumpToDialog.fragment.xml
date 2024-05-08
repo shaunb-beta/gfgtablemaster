@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form"
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog icon="sap-icon://forward" title="{i18n>jumpTo}">
+		<content>
+			<List inset="false" mode="SingleSelectMaster" includeItemInSelection="true" growing="true" growingScrollToLoad="true" items="{}"
+				selectionChange="jumpToTarget" class="jumpToList">
+				<StandardListItem title="{ToVarDescription}" type="Active" customData:jumpTblData="{}" adaptTitleSize="false"/>
+			</List>
+		</content>
+		<buttons>
+			<Button icon="sap-icon://sys-cancel" text="{i18n>close}" press="closeJumpToDialog"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,18 @@
+{
+	"data": [{
+		"key": "None",
+		"text": ""
+	},{
+		"key": "OpenA",
+		"text": "All open"
+	}, {
+		"key": "OverdueA",
+		"text": "All Overdue"
+	}, {
+		"key": "Duenext24",
+		"text": "Due Next 24 hours"
+	}, {
+		"key": "Custom",
+		"text": "User Selection"
+	}]
+}

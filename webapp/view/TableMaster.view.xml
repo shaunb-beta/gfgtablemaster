@@ -1,0 +1,131 @@
+<mvc:View controllerName="brs_demo_tablemaster.controller.TableMaster" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" displayBlock="true">
+	<App id="idTableMaster">
+		<pages>
+			<Page title="" showHeader="false" enableScrolling="false" class="brsChartMasterPageContainer">
+				<!--<Bar id="idBRSAppHeader" class="brsAppHeader">-->
+				<!--	<contentLeft>-->
+				<!--		<core:Icon src="sap-icon://slim-arrow-left" color="#39a651" size="1.2rem" class="sapUiLargeMarginBegin" customData:action="back"-->
+				<!--			press="_onAppHeaderAction"/>-->
+				<!--		<core:Icon src="sap-icon://home" color="#39a651" size="1.2rem" class="sapUiSmallMarginBegin" customData:action="home"-->
+				<!--			press="_onAppHeaderAction"/>-->
+				<!--		<Label id="idBRSAppHeading" text="{appModel>/appDesc}" width="100%" design="Bold" class="sapUiSmallMarginBegin brsAppHeading"/>-->
+				<!--	</contentLeft>-->
+				<!--	<contentRight>-->
+				<!--		<core:Icon src="sap-icon://popup-window" tooltip="{i18n>newWindow}" color="#39a651" size="1.2rem" class="sapUiSmallMarginEnd"-->
+				<!--			customData:action="duplicate" press="_onAppHeaderAction"/>-->
+				<!--	</contentRight>-->
+				<!--</Bar>-->
+				<layout:DynamicSideContent id="idBRSTableMasterMainContainer" sideContentPosition="Begin" sideContentFallDown="BelowM" containerQuery="true"
+					class="brsTableMasterMainViewContent brsFilterPaneSideContent brsFilterPaneSideContentShow">
+					<layout:sideContent>
+						<HBox width="100%" height="100%" class="brsFilterPaneContainer" fitContainer="true" alignItems="Stretch">
+							<items>
+								<IconTabBar id="idBRSFilterPaneTb" expanded="true" upperCase="true" class="sapUiContentPadding brsFilterPaneTab" stretchContentHeight="true"
+									backgroundDesign="Transparent" applyContentPadding="false">
+									<items>
+										<IconTabFilter text="{i18n>filters}">
+											<Page showHeader="false">
+												<content>
+													<HBox id="idBRSFilterPaneAdvL" width="100%" justifyContent="SpaceBetween" alignItems="Center"
+														class="brsAnimation4ms brsCursorPointer brsFilterPaneAdvFilL" visible="false">
+														<items>
+															<Label width="100%" text="{i18n>advancedFilters}" textAlign="Left" class="brsFilterPanelAdvLbl"/>
+															<Label text="{i18n>0}" class="brsFilterPaneAdvCnt" textAlign="Center"/>
+														</items>
+													</HBox>
+													<core:Fragment fragmentName="brs_demo_tablemaster.fragments.FilterPane" type="XML"/>
+												</content>
+												<footer>
+													<Bar>
+														<contentMiddle>
+															<Button width="100%" text="{i18n>apply}" press="applyFilterPane" customData:data="apply"/>
+														</contentMiddle>
+													</Bar>
+												</footer>
+											</Page>
+										</IconTabFilter>
+										<IconTabFilter text=""></IconTabFilter>
+									</items>
+								</IconTabBar>
+								<VBox id="idBRSFilterToggleL" width="30px" justifyContent="Center" class="brsFilterPaneToggleL">
+									<core:Icon tooltip="{i18n>filterPaneTooltip}" src="sap-icon://slim-arrow-left" size="1.5rem" width="100%" color="#2F1A57"
+										class="brsFilterPaneIcon brsAnimation4ms"/>
+								</VBox>
+							</items>
+						</HBox>
+					</layout:sideContent>
+					<layout:mainContent>
+						<MessageStrip id="idInitialLoadMessageStrip" showIcon="true" text="{i18n>initialloadmessage}" type="Information" visible="false" class="sapUiTinyMarginBeginEnd sapUiLargeMarginTop"/>
+						<Toolbar id="idBRSTableMasterToolbar" width="100%" height="48px" class="sapUiForceWidthAuto sapUiTinyMarginBeginEnd sapUiContentPadding">
+							<content>
+								<Label id="idAppHeader" design="Bold" text=""/>
+								<Select id="idBRSTableMasterVarintGrpSelect" autoAdjustWidth="true" visible="false"
+									items="{path: 'variantGroupModel>/d/results', filters:[{path: 'AppType', operator: 'EQ', value1: 'REPORT'}]}" change="onVariantGroupChanged"
+									maxWidth="350px">
+									<core:Item key="{variantGroupModel>AppID}" text="{variantGroupModel>AppDescription}"/>
+								</Select>
+								<!--<Label text="Variants"/>-->
+								<Select id="idBRSTableMasterVariantSelect" autoAdjustWidth="true"
+									items="{path: 'variantModel>/', filters:[{path: 'DisplayType', operator: 'EQ', value1:'table'}]}" change="onVariantChanged" maxWidth="800px" visible="false">
+									<items>
+										<core:Item key="{path: 'variantModel>', formatter: '.variantIDFormatter'}" text="{variantModel>Description}"
+											customData:variantData="{variantModel>}">
+											<!--<core:CustomData key="variantData" value="{variantModel>/}"/>-->
+										</core:Item>
+									</items>
+								</Select>
+								<ToolbarSpacer/>
+								<Button id="idSaveData" icon="sap-icon://save" tooltip="{i18n>save}" type="Transparent" press="onSaveTableData" visible="false"/>
+								<Button icon="sap-icon://action" tooltip="{i18n>exportExcel}" type="Transparent" press="onExportBtnPressed"/>
+								<Button icon="sap-icon://user-edit" tooltip="{i18n>manageVariants}" customData:buttonAction="editVariants" press="onManageVariants"
+									type="Transparent" visible="false"/>
+								<Button id="idBRSTableVariantSettingsBtn" icon="sap-icon://action-settings" tooltip="{i18n>settings}" press="onVariantSettingBtnPressed"
+									type="Transparent" visible="false"/>
+							</content>
+						</Toolbar>
+						<ScrollContainer id="idBRSTableMasterScrollContainer" vertical="false" horizontal="true" visible="true"
+							class="sapUiTinyMarginBeginEnd brsTableMasterScrollContainer">
+							<content>
+								<VBox id="idInitialLoadVB" alignItems="Center" justifyContent="Center" visible="false" class="sapUiContentPadding initialDataLoadVB">
+									<items>
+										<Text text="{i18n>initalLoadMessage}"/>
+									</items>
+								</VBox>
+								<Table id="idBRSTableMasterVariantReponsiveDataTableHeader" busyIndicatorDelay="0" showNoData="false"/>
+								<ScrollContainer id="idBRSTableMasterScrollContainertBody" vertical="true" horizontal="false" class="childSContainer">
+									<Table id="idBRSTableMasterVariantReponsiveDataTable" busyIndicatorDelay="0" enableBusyIndicator="true" width="100%" inset="false"
+										mode="SingleSelectMaster" includeItemInSelection="true" growing="true" growingThreshold="20" growingScrollToLoad="false"
+										selectionChange="onTableItemPress" noDataText="{i18n>loadingIndicator}"/>
+								</ScrollContainer>
+							</content>
+						</ScrollContainer>
+						<!-- updateStarted="onUpdateStarted" updateFinished="onUpdateFinished" -->
+						<!--<ScrollContainer id="idBRSTableMasterScrollContainer" vertical="true" horizontal="true" width="auto" height="100%" visible="true"-->
+						<!--	class="sapUiTinyMarginBeginEnd brsTableMasterScrollContainer">-->
+						<!--	<content>-->
+						<!--		<Table id="idBRSTableMasterVariantReponsiveDataTable" mode="SingleSelectMaster" includeItemInSelection="true" growing="true"-->
+						<!--			growingThreshold="200" growingScrollToLoad="false" updateStarted="onUpdateStarted" updateFinished="onUpdateFinished"-->
+						<!--			selectionChange="onTableItemPress" class="persoTableStyle" noDataText="{i18n>loadingIndicator}"/>-->
+						<!--	</content>-->
+						<!--</ScrollContainer>-->
+						<VBox id="idBRSTableMasterDetailContainer" width="auto" height="0px" visible="false" class="sapUiTinyMarginBeginEnd brsTableMasterDCVB">
+							<items>
+								<Toolbar class="toolbar" width="100%">
+									<Label text="{i18n>detailView}" id="idDetailLabel" class="detailDescLabel"/>
+									<ToolbarSpacer/>
+									<Button icon="sap-icon://forward" tooltip="{i18n>jumpTo}" type="Transparent" press="loadJumpToInfo" customData:fromDetail="true"/>
+									<!--<Button icon="sap-icon://action" tooltip="{i18n>exportFile}" type="Transparent" enabled="false"/>-->
+									<Button id="idDetailFullScreen" icon="sap-icon://full-screen" tooltip="{i18n>expand}" press="onDetailExpand" type="Transparent"/>
+									<Button icon="sap-icon://sys-cancel" tooltip="{i18n>close}" press="toggleDetailView" type="Transparent"/>
+								</Toolbar>
+								<VBox id="idBRSPanelContainer" width="100%" height="100%"/>
+							</items>
+						</VBox>
+					</layout:mainContent>
+				</layout:DynamicSideContent>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

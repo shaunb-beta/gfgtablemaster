@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog icon="sap-icon://save" title="{i18n>varSave}" draggable="true" resizable="true" class="sapUiContentPadding">
+		<content>
+			<Label text="{i18n>varID}"/>
+			<Input id="idBRSTableMasterVariantSaveID" width="100%" liveChange="checkDuplicateVariant"/>
+			<Label text="{i18n>varDesc}"/>
+			<Input id="idBRSTableMasterVariantSaveDesc" width="100%"/>
+			<CheckBox id="idBRSTableMasterVariantSaveSuperChk" text="{i18n>shararableToAllUsers}" class="brsVarSaveMCbBg"/>
+		</content>
+		<buttons>
+			<Button text="{i18n>apply}" press="onVariantAction" customData:data="apply"/>
+			<Button text="{i18n>save}" press="onVariantAction" customData:data="save"/>
+			<Button text="{i18n>cancel}" press="onVariantAction" customData:data="cancel"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
